@@ -1,0 +1,249 @@
+<!DOCTYPE html><html lang="he" dir="rtl"><head>
+<link rel="apple-touch-icon" href="https://i.imgur.com/E7D5xbJ.jpeg">
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no,viewport-fit=cover">
+<meta name="apple-mobile-web-app-capable" content="yes"><meta name="mobile-web-app-capable" content="yes"><meta name="theme-color" content="#0b0d1a"><title>עיר הניאון</title>
+<link href="https://fonts.googleapis.com/css2?family=Heebo:wght@500;800&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;-webkit-user-select:none;user-select:none;touch-action:none;-webkit-tap-highlight-color:transparent}
+html,body{margin:0;height:100%;overflow:hidden;background:#05060f;color:#fff;font-family:Heebo,system-ui,Arial,sans-serif}
+#c{position:fixed;inset:0;width:100%;height:100%}
+#top{position:fixed;top:calc(env(safe-area-inset-top,0px) + 8px);right:10px;font-weight:800;text-shadow:0 1px 4px #000;line-height:1.5;pointer-events:none;font-size:15px;max-width:55vw}
+#hpb{width:130px;height:9px;background:#0008;border-radius:5px;overflow:hidden;border:1px solid #fff6}#hp{height:100%;background:linear-gradient(90deg,#e33,#4d4);width:100%}
+#mini{position:fixed;top:calc(env(safe-area-inset-top,0px) + 8px);left:10px;width:120px;height:120px;border-radius:50%;border:3px solid #fffa;box-shadow:0 0 14px #000a;pointer-events:none}
+#pr{position:fixed;bottom:150px;left:50%;transform:translateX(-50%);background:#000b;padding:6px 14px;border-radius:14px;font-weight:800;pointer-events:none;display:none;text-align:center}
+#msg{position:fixed;top:30%;left:50%;transform:translateX(-50%);background:#000c;padding:8px 18px;border-radius:14px;font-weight:800;pointer-events:none;opacity:0;transition:opacity .3s;text-align:center;max-width:80vw}
+#joy{position:fixed;left:18px;bottom:calc(env(safe-area-inset-bottom,0px) + 22px);width:130px;height:130px;border-radius:50%;background:#fff2;border:2px solid #fff5}
+#kn{position:absolute;left:35px;top:35px;width:60px;height:60px;border-radius:50%;background:#fffb}
+#btn{position:fixed;right:12px;bottom:calc(env(safe-area-inset-bottom,0px) + 18px);width:200px;height:190px}
+#btn button{position:absolute;border:2px solid #fff7;background:#1a1f3acc;color:#fff;border-radius:50%;font:800 13px Heebo,Arial;width:62px;height:62px}
+#bA{right:0;bottom:0;width:84px!important;height:84px!important;background:#c2185bdd!important;font-size:15px!important}
+#bJ{right:96px;bottom:6px}#bC{right:90px;bottom:76px}#bD{right:6px;bottom:96px}#bP{right:78px;bottom:140px;width:50px!important;height:50px!important;font-size:22px!important}
+.ov{position:fixed;inset:0;display:none;align-items:center;justify-content:center;background:#000a;z-index:20;padding:12px}
+.card{background:linear-gradient(160deg,#1b1f45,#2a0f3d);border:2px solid #ff4fd8;border-radius:22px;padding:18px;max-width:420px;width:100%;box-shadow:0 0 30px #ff4fd855;max-height:92vh;overflow:auto;text-align:right}
+.card h2{margin:0 0 6px;color:#ffd84d}.card button,.ph button{background:#ff2e93;border:0;color:#fff;font:800 15px Heebo,Arial;padding:11px;border-radius:12px;margin:4px 0;width:100%}
+.tabs{display:flex;gap:6px}.tabs button{background:#333a66!important}.tabs button.on{background:#ff2e93!important}
+.card li{margin:7px 0;line-height:1.5}
+#ph{display:none}.ph{background:#0c0f1e;border:6px solid #333;border-radius:30px;width:290px;height:min(520px,88vh);padding:16px;overflow:auto;position:relative}
+.ph .x{position:absolute;left:14px;top:10px;font-size:20px}.ph h3{margin:6px 0 10px;color:#7df}.ph .g{display:grid;grid-template-columns:1fr 1fr;gap:8px}.ph p{margin:4px 0;font-size:13px;line-height:1.5}
+#hk .bar{position:relative;height:34px;background:#222;border-radius:10px;margin:14px 0;overflow:hidden}#zn{position:absolute;top:0;bottom:0;background:#2e7d32aa;border:2px solid #4f4}#mk{position:absolute;top:0;bottom:0;width:6px;background:#fff;box-shadow:0 0 8px #fff}
+</style></head><body>
+<canvas id="c"></canvas><canvas id="mini"></canvas>
+<div id="top"></div><div id="pr"></div><div id="msg"></div>
+<div id="joy"><div id="kn"></div></div>
+<div id="btn"><button id="bA">אגרוף</button><button id="bJ">קפיצה</button><button id="bC">טיפוס</button><button id="bD">💃 ריקוד</button><button id="bP">📱</button></div>
+<div class="ov" id="ins" style="display:flex"><div class="card"><h2>📲 התקינו את עיר הניאון</h2><p style="margin:0 0 8px">מסך מלא, בלי סרגלי דפדפן, ישר מהמסך הבית:</p>
+<div class="tabs"><button id="t1" class="on" onclick="tab(1)">אייפון</button><button id="t2" onclick="tab(2)">אנדרואיד</button></div>
+<ol id="s1"><li>פתחו את הקישור ב־<b>Safari</b>.</li><li>לחצו על כפתור <b>השיתוף</b> (ריבוע עם חץ למעלה).</li><li>גללו ובחרו <b>״הוסף למסך הבית״</b>.</li><li>לחצו <b>״הוסף״</b> ופתחו את המשחק מהאייקון.</li></ol>
+<ol id="s2" hidden><li>פתחו ב־<b>Chrome</b>.</li><li>לחצו על <b>⋮</b> בפינה.</li><li>בחרו <b>״התקן אפליקציה״</b> או <b>״הוסף למסך הבית״</b>.</li><li>אשרו, והמשחק יופיע כאפליקציה.</li></ol>
+<button id="ib" style="display:none">⬇ התקנה מהירה</button><button id="go">▶ התחל לשחק</button></div></div>
+<div class="ov" id="ph"><div class="ph" id="pc"></div></div>
+<div class="ov" id="hk"><div class="card"><h2 id="hkt">פריצה</h2><div>עצרו את המחוון בתוך האזור הירוק</div><div class="bar"><div id="zn"></div><div id="mk"></div></div><button id="hs">עצור!</button></div></div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script>
+const $=i=>document.getElementById(i),clamp=(v,a,b)=>Math.max(a,Math.min(b,v)),R=(a,b)=>a+Math.random()*(b-a),PI=Math.PI;
+let sd=7;const rnd=()=>(sd=(sd*16807)%2147483647)/2147483647;
+const lerpA=(a,b,t)=>a+(((b-a+PI*3)%(PI*2))-PI)*t;
+try{const m=new Blob([JSON.stringify({name:"עיר הניאון",short_name:"עיר הניאון",display:"fullscreen",dir:"rtl",lang:"he",start_url:".",background_color:"#05060f",theme_color:"#0b0d1a"})],{type:"application/manifest+json"});const l=document.createElement('link');l.rel='manifest';l.href=URL.createObjectURL(m);document.head.appendChild(l)}catch(e){}
+let dip=null;addEventListener('beforeinstallprompt',e=>{e.preventDefault();dip=e;$('ib').style.display='block'});
+$('ib').onclick=()=>dip&&dip.prompt();
+function tab(n){$('s1').hidden=n!=1;$('s2').hidden=n!=2;$('t1').className=n==1?'on':'';$('t2').className=n==2?'on':''}
+if(/android/i.test(navigator.userAgent))tab(2);
+let started=false;$('go').onclick=()=>{$('ins').style.display='none';started=true;msg('ברוכים הבאים! גשו לטבעת הצהובה ליד חנות כדי להיכנס 🏪')};
+// ---------- renderer
+const cv=$('c'),rd=new THREE.WebGLRenderer({canvas:cv,antialias:true});rd.setPixelRatio(Math.min(devicePixelRatio,2));rd.shadowMap.enabled=true;
+const sc=new THREE.Scene(),cam=new THREE.PerspectiveCamera(65,1,.1,500);sc.fog=new THREE.Fog(0x000000,80,330);sc.background=new THREE.Color();
+function rs(){rd.setSize(innerWidth,innerHeight,false);cam.aspect=innerWidth/innerHeight;cam.updateProjectionMatrix()}addEventListener('resize',rs);rs();
+const hemi=new THREE.HemisphereLight(0xbfd8ff,0x404050,.6),sun=new THREE.DirectionalLight(0xfff0d0,1);
+sun.castShadow=true;sun.shadow.mapSize.set(1024,1024);const sh=sun.shadow.camera;sh.left=sh.bottom=-60;sh.right=sh.top=60;sh.near=1;sh.far=300;sc.add(hemi,sun,sun.target);
+const city=new THREE.Group(),IG=new THREE.Group();IG.visible=false;sc.add(city,IG);
+const mat=(c,o)=>new THREE.MeshStandardMaterial(Object.assign({color:c,roughness:.7},o)),BG=THREE.BoxGeometry;
+const bm=(g,m,x,y,z,c=1)=>{const o=new THREE.Mesh(g,m);o.position.set(x,y,z);o.castShadow=!!c;o.receiveShadow=true;return o};
+function tx(s,col,bg){const c=document.createElement('canvas');c.width=512;c.height=128;const x=c.getContext('2d');x.fillStyle=bg;x.fillRect(0,0,512,128);x.direction='rtl';x.textAlign='center';x.font='800 80px Heebo,Arial';x.fillStyle=col;x.shadowColor=col;x.shadowBlur=16;x.fillText(s,256,94);return new THREE.CanvasTexture(c)}
+// ---------- facades
+const styles=[],walls=['#8a8f9a','#a3836b','#5d6b7d','#d9cdb4','#6f4f4f','#e3ddd0','#3c4a5a','#7a8f78'];
+walls.forEach((w,n)=>{const p=[];for(let i=0;i<16;i++)p.push(Math.random()<.4);const gl=n%2?'#1c2b3d':'#2b1c3d';
+ const mk=e=>{const c=document.createElement('canvas');c.width=c.height=128;const x=c.getContext('2d');x.fillStyle=e?'#000':w;x.fillRect(0,0,128,128);p.forEach((on,i)=>{x.fillStyle=e?(on?'#ffc86a':'#000'):(on?'#e9d9a0':gl);x.fillRect((i%4)*32+6,((i/4)|0)*32+6,20,22)});const t=new THREE.CanvasTexture(c);t.wrapS=t.wrapT=THREE.RepeatWrapping;return t};
+ styles.push(mat(0xffffff,{map:mk(0),emissiveMap:mk(1),emissive:0xffffff,emissiveIntensity:0}))});
+const roofM=mat(0x4a4d55),B=[],doors=[];
+function fac(w,h,d,st,x,y,z){const g=new BG(w,h,d),u=g.attributes.uv,s=[d,d,0,0,w,w];
+ for(let f=0;f<6;f++)if(f!=2&&f!=3)for(let k=0;k<4;k++){const i=f*4+k;u.setXY(i,u.getX(i)*Math.max(1,Math.round(s[f]/7)),u.getY(i)*Math.max(1,Math.round(h/12)))}
+ city.add(bm(g,[st,st,roofM,roofM,st,st],x,y,z));B.push({x0:x-w/2,x1:x+w/2,z0:z-d/2,z1:z+d/2,h:y+h/2})}
+const neonC=[0xff2e93,0x00e5ff,0xb388ff,0x76ff03,0xffab00];
+const neon=(w,h,d,x,y,z)=>{const c=neonC[rnd()*5|0];city.add(bm(new BG(w,h,d),new THREE.MeshBasicMaterial({color:c}),x,y,z,0))};
+function lot(x,z){const t=rnd()*4|0,st=styles[rnd()*8|0];let w=16+rnd()*7,d=16+rnd()*7,h;
+ if(t==0){h=28+rnd()*45;fac(w,h,d,st,x,h/2,z);city.add(bm(new BG(5,2.5,5),roofM,x,h+1.2,z));city.add(bm(new THREE.CylinderGeometry(.12,.12,8),mat(0x999999),x+3,h+4,z));city.add(bm(new THREE.SphereGeometry(.4),new THREE.MeshBasicMaterial({color:0xff2222}),x+3,h+8,z,0));neon(.4,h*.8,.4,x+w/2,h*.45,z+d/2)}
+ else if(t==1){h=14+rnd()*12;fac(w,h,d,st,x,h/2,z);const h2=10+rnd()*14;fac(w*.65,h2,d*.65,styles[rnd()*8|0],x,h+h2/2,z);
+  for(let y=4;y<h-2;y+=7)for(const o of[-5,5])city.add(bm(new BG(6,.3,1.6),mat(0x888888),x+o,y,z+d/2+.8));neon(w*.6,.4,.3,x,h+.3,z+d/2*.65+.2)}
+ else if(t==2){w=14+rnd()*4;d=12+rnd()*4;h=6+rnd()*2;fac(w,h,d,styles[[3,5,7,4][rnd()*4|0]],x,h/2,z);
+  const r=bm(new THREE.ConeGeometry(w/1.414*1.1,4,4),mat(0xa0452a),x,h+2,z);r.rotation.y=PI/4;r.scale.z=d/w;city.add(r);city.add(bm(new BG(1.2,3,1.2),mat(0x6b3a2a),x+w/4,h+3,z));
+  city.add(bm(new THREE.PlaneGeometry(2.2,3.4),mat(0x5a3a1f),x,1.7,z+d/2+.05,0))}
+ else{h=9+rnd()*3;w=22;fac(w,h,d,st,x,h/2,z);const a=bm(new BG(w-2,.25,3),mat(neonC[rnd()*5|0]),x,4.6,z+d/2+1.4);a.rotation.x=.3;city.add(a);neon(9,1.2,.3,x,h-1.3,z+d/2+.2)}
+ B[B.length-1].h=B[B.length-1].h;}
+function shop(t,x,z){const w=22,d=22,h=12,s=S[t];fac(w,h,d,styles[3],x,h/2,z);
+ city.add(bm(new THREE.PlaneGeometry(14,3.5),new THREE.MeshBasicMaterial({map:tx(s.n,s.col,'#10131f')}),x,h-2.2,z+d/2+.06,0));
+ city.add(bm(new THREE.PlaneGeometry(4,4.4),mat(0x113355,{emissive:0x2266aa,emissiveIntensity:.8}),x,2.2,z+d/2+.06,0));
+ const a=bm(new BG(w-2,.25,3.2),mat(s.cc),x,5.3,z+d/2+1.6);a.rotation.x=.3;city.add(a);
+ const dz=z+d/2+3.2;city.add(bm(new THREE.CylinderGeometry(1.7,1.7,.12,24),new THREE.MeshBasicMaterial({color:0xffd84d}),x,.25,dz,0));
+ city.add(bm(new THREE.CylinderGeometry(1.5,1.5,14,16,1,true),new THREE.MeshBasicMaterial({color:0xffd84d,transparent:true,opacity:.18,side:2,depthWrite:false}),x,7,dz,0));
+ doors.push({x,z:dz,t})}
+const S={bank:{n:'בנק',col:'#ffd84d',cc:0x335577,c:0x4a5a78,rob:900,buy:{l:'אפוד מגן',p:300,f:()=>{P.vest=1;msg('קיבלתם אפוד מגן 🦺')}}},
+ market:{n:'סופרמרקט',col:'#6fff7f',cc:0x2e9e4f,c:0xb9c9a0,rob:250,buy:{l:'אוכל (+40 חיים)',p:30,f:()=>{P.hp=Math.min(100,P.hp+40)}}},
+ tools:{n:'כלי עבודה',col:'#ff9a3d',cc:0xd9701a,c:0x8a7a68,rob:320,buy:{l:'ערכת פריצה',p:200,f:()=>{P.kit=1;msg('פריצה קלה יותר 🔧')}}},
+ cloth:{n:'אופנה',col:'#ff7ad9',cc:0xc2185b,c:0xc8b4d8,rob:200,buy:{l:'סגנון חדש',p:80,f:()=>{pl.tor.material.color.setHSL(Math.random(),.7,.5);pl.lL.material.color.setHSL(Math.random(),.5,.3);msg('נראים מדהים! ✨')}}}};
+for(const k in S)S[k].cool=0;
+// ground, blocks, lamps
+const rc=document.createElement('canvas');rc.width=rc.height=128;{const x=rc.getContext('2d');x.fillStyle='#262930';x.fillRect(0,0,128,128);x.fillStyle='#e6b800';for(let i=0;i<128;i+=16){x.fillRect(62,i,4,8);x.fillRect(i,62,8,4)}}
+const rt=new THREE.CanvasTexture(rc);rt.wrapS=rt.wrapT=THREE.RepeatWrapping;rt.repeat.set(6,6);rt.anisotropy=4;
+const gr=bm(new THREE.PlaneGeometry(420,420),mat(0xffffff,{map:rt,roughness:.9}),0,0,0,0);gr.rotation.x=-PI/2;city.add(gr);
+const ENT=[['bank',2,2,-1,1],['market',1,2,1,1],['tools',3,1,-1,1],['cloth',2,3,1,1]],lamps=[];
+for(let i=0;i<5;i++)for(let j=0;j<5;j++){const cx=(i-2)*70,cz=(j-2)*70;city.add(bm(new BG(56,.12,56),mat(0x5a606c),cx,.06,cz,0));
+ for(const a of[-1,1])for(const b of[-1,1]){lamps.push([cx+a*26.5,cz+b*26.5]);const e=ENT.find(q=>q[1]==i&&q[2]==j&&q[3]==a&&q[4]==b);e?shop(e[0],cx+a*13.5,cz+b*13.5):lot(cx+a*13.5,cz+b*13.5)}}
+const lampM=new THREE.MeshStandardMaterial({color:0xffffaa,emissive:0xffe9a0,emissiveIntensity:0}),pole=new THREE.InstancedMesh(new THREE.CylinderGeometry(.12,.12,6),mat(0x333333),lamps.length),bulb=new THREE.InstancedMesh(new THREE.SphereGeometry(.45,8,6),lampM,lamps.length),dm=new THREE.Object3D();
+lamps.forEach((l,i)=>{dm.position.set(l[0],3,l[1]);dm.updateMatrix();pole.setMatrixAt(i,dm.matrix);dm.position.y=6.2;dm.updateMatrix();bulb.setMatrixAt(i,dm.matrix)});city.add(pole,bulb);
+// ---------- humans & cars
+function human(col,pant,hair){const g=new THREE.Group(),b=new THREE.Group();g.add(b);const skin=mat(0xe0ac80),M=c=>mat(c),o={g,b};
+ o.tor=bm(new THREE.CylinderGeometry(.26,.22,.7,10),M(col),0,1.15,0);b.add(o.tor);
+ const lim=(r,len,mt,x,y)=>{const p=new THREE.Group();p.position.set(x,y,0);const m=bm(new THREE.CylinderGeometry(r,r*.8,len,8),mt,0,-len/2,0);p.add(m);p.material=mt;b.add(p);return p};
+ o.lL=lim(.11,.85,M(pant),-.13,.85);o.lR=lim(.11,.85,o.lL.material,.13,.85);o.lR.material=o.lL.material;
+ o.aL=lim(.08,.65,M(col),-.34,1.45);o.aR=lim(.08,.65,o.aL.material,.34,1.45);
+ b.add(bm(new THREE.SphereGeometry(.2,12,10),skin,0,1.75,0));b.add(bm(new THREE.SphereGeometry(.215,10,6,0,PI*2,0,PI/2),M(hair),0,1.77,0));
+ b.add(bm(new BG(.07,.07,.05),M(0x111111),-.08,1.78,.19,0));b.add(bm(new BG(.07,.07,.05),M(0x111111),.08,1.78,.19,0));return o}
+function anim(h,m,t,s){const{lL,lR,aL,aR,b}=h;[lL,lR,aL,aR,b].forEach(o=>{o.rotation.set(0,0,0)});b.position.set(0,0,0);
+ if(m==0){aL.rotation.x=Math.sin(t*1.5)*.05}
+ else if(m==1){const w=Math.sin(t*11)*.9*s;lL.rotation.x=w;lR.rotation.x=-w;aL.rotation.x=-w*.8;aR.rotation.x=w*.8}
+ else if(m==2){const w=Math.sin(t*9);aL.rotation.x=PI-.3+w*.4;aR.rotation.x=PI-.3-w*.4;lL.rotation.x=w*.7;lR.rotation.x=-w*.7}
+ else if(m==5){aR.rotation.x=-PI/2+Math.sin(t*30)*.3}
+ else if(m>=10){const d=m-10;
+  if(d==0){aL.rotation.z=-PI*.75+Math.sin(t*8)*.4;aR.rotation.z=PI*.75+Math.sin(t*8+1)*.4;b.position.y=Math.abs(Math.sin(t*8))*.15;b.rotation.y=Math.sin(t*4)*.5;lL.rotation.x=Math.sin(t*8)*.5;lR.rotation.x=-Math.sin(t*8)*.5}
+  else if(d==1){const q=Math.floor(t*3)%4;aR.rotation.x=[-1.57,0,-1.57,0][q];aL.rotation.x=[0,-1.57,0,-1.57][q];aR.rotation.z=.4;aL.rotation.z=-.4;b.rotation.y=q*.6-.9;lL.rotation.z=-.2;lR.rotation.z=.2}
+  else if(d==2){aL.rotation.x=Math.sin(t*12);aR.rotation.x=Math.sin(t*12+2);aL.rotation.z=-1+Math.sin(t*9);aR.rotation.z=1+Math.sin(t*9+1);lL.rotation.x=Math.sin(t*12+1);lR.rotation.x=Math.sin(t*12+3);b.rotation.y=t*6;b.position.y=Math.abs(Math.sin(t*6))*.3}
+  else{lL.rotation.x=Math.sin(t*6)*.6;lR.rotation.x=Math.sin(t*6+PI)*.6;b.rotation.x=-.15;b.position.z=Math.sin(t*3)*.3;aR.rotation.z=2.2;aL.rotation.x=-1.5+Math.sin(t*6)*.3}}}
+const DN=['דיסקו','רובוט','תזזית','מונוולק'];
+const pl=human(0xff2e93,0x223355,0x2a1a10);sc.add(pl.g);pl.g.traverse(o=>{o.castShadow=true});
+function mkCar(col,x,z,h){const g=new THREE.Group(),bd=mat(col,{metalness:.6,roughness:.3});g.add(bm(new BG(2,.65,4.3),bd,0,.65,0));g.add(bm(new BG(1.8,.6,2.2),mat(0x111a24,{metalness:.9,roughness:.1}),0,1.25,-.2));
+ for(const a of[-1,1])for(const b of[-1.4,1.4]){const w=bm(new THREE.CylinderGeometry(.38,.38,.3,12),mat(0x111111),a,.38,b);w.rotation.z=PI/2;g.add(w)}
+ for(const a of[-.7,.7]){g.add(bm(new BG(.4,.18,.1),new THREE.MeshBasicMaterial({color:0xfff2a0}),a,.7,2.16,0));g.add(bm(new BG(.4,.18,.1),new THREE.MeshBasicMaterial({color:0xff2020}),a,.7,-2.16,0))}
+ city.add(g);const c={m:g,x,z,h,v:0};g.position.set(x,0,z);g.rotation.y=h;cars.push(c);return c}
+const cars=[];[[0xd32f2f,38,20,0],[0x1976d2,-32,-60,PI],[0xfbc02c,100,35,0],[0x00c853,-100,70,PI/2],[0x7b1fa2,32,-130,0]].forEach(c=>mkCar(...c));
+const foes=[];for(let i=0;i<7;i++){const f=human(0x222222,0x111111,0x000000);f.g.traverse(o=>{o.castShadow=true});city.add(f.g);const rx=[-175,-105,-35,35,105,175];Object.assign(f,{x:rx[i%6]+R(-3,3),z:R(-150,150),hp:3,dead:0,rot:0});f.g.position.set(f.x,0,f.z);foes.push(f)}
+// ---------- state
+const P={x:0,z:32,y:0,vy:0,rot:PI,hp:100,money:500,car:null,int:null,dance:-1,vest:0,kit:0,climb:0,wk:0,pt:0};
+let yaw=0,pitch=.35,tday=18,mission=null,JP=0,CL=0;const K={},J={x:0,y:0};
+function msg(t){const m=$('msg');m.textContent=t;m.style.opacity=1;clearTimeout(msg.t);msg.t=setTimeout(()=>m.style.opacity=0,2600)}
+// ---------- input
+addEventListener('keydown',e=>{const k=e.key.toLowerCase();K[{arrowup:'w',arrowdown:'s',arrowleft:'a',arrowright:'d'}[k]||k]=1;if(k==' ')JP=1;if(k=='e')act();if(k=='g')dance();if(k=='p')phoneT();if(k=='c')CL=1});
+addEventListener('keyup',e=>{const k=e.key.toLowerCase();K[{arrowup:'w',arrowdown:'s',arrowleft:'a',arrowright:'d'}[k]||k]=0;if(k=='c')CL=0});
+const jy=$('joy'),kn=$('kn');let jp=null;
+function jm(e){const r=jy.getBoundingClientRect(),dx=e.clientX-r.left-r.width/2,dy=e.clientY-r.top-r.height/2,m=r.width*.4,l=Math.hypot(dx,dy)||1,k=Math.min(1,l/m);J.x=dx/l*k;J.y=-dy/l*k;kn.style.transform=`translate(${dx/l*k*m}px,${dy/l*k*m}px)`}
+jy.onpointerdown=e=>{jp=e.pointerId;jy.setPointerCapture(jp);jm(e)};jy.onpointermove=e=>{if(e.pointerId==jp)jm(e)};jy.onpointerup=jy.onpointercancel=()=>{jp=null;J.x=J.y=0;kn.style.transform=''};
+let dr=null,lx=0,ly=0;cv.onpointerdown=e=>{dr=e.pointerId;lx=e.clientX;ly=e.clientY;cv.setPointerCapture(dr)};
+cv.onpointermove=e=>{if(e.pointerId==dr){yaw-=(e.clientX-lx)*.006;pitch=clamp(pitch+(e.clientY-ly)*.005,-.1,1.2);lx=e.clientX;ly=e.clientY}};cv.onpointerup=cv.onpointercancel=()=>{dr=null};
+const bd=(id,f)=>{$(id).onpointerdown=e=>{e.preventDefault();f()}};bd('bA',()=>act());bd('bJ',()=>JP=1);bd('bD',dance);bd('bP',phoneT);
+$('bC').onpointerdown=e=>{CL=1};$('bC').onpointerup=$('bC').onpointercancel=()=>CL=0;
+function dance(){if(P.car||!started)return;P.dance=P.dance<0?0:(P.dance+1)%4;msg('💃 '+DN[P.dance])}
+// ---------- collision
+function hit(x,z,y,r=.5){for(const b of B)if(y<b.h-.6&&x>b.x0-r&&x<b.x1+r&&z>b.z0-r&&z<b.z1+r)return b;return null}
+function flr(x,z,y){let f=0;for(const b of B)if(y>=b.h-.7&&x>b.x0-.2&&x<b.x1+.2&&z>b.z0-.2&&z<b.z1+.2&&b.h>f)f=b.h;return f}
+// ---------- interiors
+const II=[],IL={};
+function sp(txt,x,z,col){const m=new THREE.Sprite(new THREE.SpriteMaterial({map:tx(txt,col,'rgba(0,0,0,.55)'),depthTest:false}));m.scale.set(4,1,1);m.position.set(x,2.7,z);IG.add(m)}
+function spot(dx,z,k,l,col){II.push({x:3000+dx,z,k,l});const r=new THREE.Mesh(new THREE.CylinderGeometry(1.1,1.1,.06,24),new THREE.MeshBasicMaterial({color:col}));r.position.set(3000+dx,.04,z);IG.add(r);sp(l,3000+dx,z,'#fff')}
+function buildInt(t){const s=S[t];IG.clear();II.length=0;
+ const ms=[mat(s.c),mat(s.c),mat(0xeeeeee),mat(0x222831,{roughness:.3}),mat(s.c),mat(s.c)];ms.forEach(m=>m.side=THREE.BackSide);
+ IG.add(bm(new BG(20,6,20),ms,3000,3,0,0));const pl2=new THREE.PointLight(0xfff0d0,1.3,45);pl2.position.set(3000,5,0);IG.add(pl2);
+ for(const x of[-5,5])IG.add(bm(new BG(3,.1,3),new THREE.MeshBasicMaterial({color:0xffffee}),3000+x,5.95,0,0));
+ [[-8.4,-4],[-8.4,2.5],[-3,-1],[-3,5]].forEach(([x,z])=>{IG.add(bm(new BG(1.1,2.3,5),mat(0x5a4a3a),3000+x,1.15,z));for(let l=0;l<3;l++)for(let i=0;i<5;i++)IG.add(bm(new BG(.5,.5,.6),mat(new THREE.Color().setHSL(Math.random(),.7,.55)),3000+x+.45,.5+l*.7,z-2+i*1,0))});
+ IG.add(bm(new BG(7,1.1,1.3),mat(0x333844),3005.5,.55,-4.5));IG.add(bm(new BG(7.4,.1,1.6),mat(0xdddddd),3005.5,1.15,-4.5));IG.add(bm(new BG(.6,.4,.5),mat(0x111111),3007,1.4,-4.5));
+ const w=human(0x3366aa,0x222222,0x553311);w.g.position.set(3005.5,0,-6);IG.add(w.g);
+ if(t=='bank'){const v=bm(new THREE.CylinderGeometry(2.4,2.4,.7,32),mat(0x9aa4b0,{metalness:.9,roughness:.2}),3000,2.6,-9.6);v.rotation.x=PI/2;IG.add(v);const tr=bm(new THREE.TorusGeometry(1.4,.12,8,24),mat(0xd4af37,{metalness:1}),3000,2.6,-9.2);IG.add(tr);spot(0,-8,'rob','פרצו את הכספת','#f33'.length&&0xff3333)}
+ else spot(8,-3.2,'rob','שדדו קופה',0xff3333);
+ spot(3,-3.2,'work','עבדו משמרת',0x3399ff);spot(-6,0,'buy',s.buy.l+' ₪'+s.buy.p,0x33dd66);spot(0,8.2,'exit','יציאה',0xffffff)}
+function goIn(t){if(P.car){msg('צריך לרדת מהרכב קודם');return}P.int=t;city.visible=false;IG.visible=true;buildInt(t);P.x=3000;P.z=6;P.y=0;P.rot=PI;yaw=0;msg('ברוכים הבאים ל'+S[t].n)}
+function leave(){const d=doors.find(q=>q.t==P.int);P.int=null;city.visible=true;IG.visible=false;P.x=d.x;P.z=d.z+2.5;P.rot=0;yaw=0}
+const nearI=()=>{let b=null,m=2.6;for(const o of II){const d=Math.hypot(o.x-P.x,o.z-P.z);if(d<m){m=d;b=o}}return b};
+const nearCar=()=>{let b=null,m=4.5;for(const c of cars){const d=Math.hypot(c.x-P.x,c.z-P.z);if(d<m){m=d;b=c}}return b};
+function act(){if(!started||hk.on)return;
+ if(P.int){const o=nearI();if(!o)return;const s=S[P.int];
+  if(o.k=='exit')leave();
+  else if(o.k=='buy'){if(P.money<s.buy.p)msg('אין מספיק כסף 💸');else{P.money-=s.buy.p;s.buy.f()}}
+  else if(o.k=='work'){if(Date.now()<P.wk)msg('הפסקה קצרה...');else{P.wk=Date.now()+6000;P.money+=40;msg('עבדתם משמרת: ‎+₪40')}}
+  else if(o.k=='rob'){if(Date.now()<s.cool)msg('האבטחה בכוננות, חכו קצת 🚨');else hackStart(s)}return}
+ if(P.car){const c=P.car;P.car=null;P.x=c.x+Math.cos(c.h)*2.6;P.z=c.z-Math.sin(c.h)*2.6;pl.g.visible=true;return}
+ const c=nearCar();if(c){P.car=c;pl.g.visible=false;P.dance=-1;return}
+ const d=doors.find(q=>Math.hypot(q.x-P.x,q.z-P.z)<3.6);if(d){goIn(d.t);return}
+ P.pt=.35;let b=null,m=2.8;for(const f of foes)if(!f.dead){const q=Math.hypot(f.x-P.x,f.z-P.z);if(q<m){m=q;b=f}}
+ if(b){b.hp--;if(b.hp<=0){b.dead=1;b.rs=Date.now()+30000;b.g.visible=false;P.money+=60;msg('הפלתם בריון! ‎+₪60')}}}
+// ---------- hack minigame
+const hk={on:0,p:0,d:1,r:0,a:0,w:0,s:null};
+function hkZone(){hk.w=P.kit?.26:.16;hk.a=R(.1,.9-hk.w);$('zn').style.left=hk.a*100+'%';$('zn').style.width=hk.w*100+'%'}
+function hackStart(s){hk.on=1;hk.r=0;hk.p=0;hk.d=1;hk.s=s;hkZone();$('hk').style.display='flex';$('hkt').textContent='פריצה 1/3'}
+$('hs').onpointerdown=e=>{e.preventDefault();if(!hk.on)return;
+ if(hk.p>=hk.a&&hk.p<=hk.a+hk.w){hk.r++;if(hk.r>=3){hk.on=0;$('hk').style.display='none';P.money+=hk.s.rob;hk.s.cool=Date.now()+90000;msg('הצלחתם! ‎+₪'+hk.s.rob+' 💰')}else{$('hkt').textContent='פריצה '+(hk.r+1)+'/3';hkZone()}}
+ else{hk.on=0;$('hk').style.display='none';P.hp-=15;hk.s.cool=Date.now()+30000;msg('האזעקה צפצפה! ‎-15 חיים 🚨');leave()}};
+// ---------- phone
+function phoneT(){const e=$('ph');if(e.style.display=='flex'){e.style.display='none';return}if(!started)return;e.style.display='flex';pg('h')}
+function pg(a){let h='<b class="x" onclick="phoneT()">✕</b>';
+ if(a=='h')h+='<h3>📱 הטלפון</h3><div class="g"><button onclick="pg(\'m\')">📋 משימות</button><button onclick="pg(\'s\')">🛒 חנות</button><button onclick="pg(\'c\')">👥 אנשי קשר</button><button onclick="pg(\'i\')">ℹ️ הדרכה</button></div>';
+ else if(a=='m')h+='<h3>📋 משימות</h3><button onclick="mis(0)">🍕 משלוח פיצה (ברגל או ברכב)</button><button onclick="mis(1)">🚕 נהג מונית (חובה ברכב)</button><p>'+(mission?'משימה פעילה: '+mission.n:'אין משימה פעילה')+'</p>';
+ else if(a=='s')h+='<h3>🛒 חנות</h3><button onclick="by(0)">🦺 אפוד מגן ₪300</button><button onclick="by(1)">🔧 ערכת פריצה ₪200</button><button onclick="by(2)">🩹 עזרה ראשונה ₪60</button><button onclick="by(3)">🚗 הזמנת רכב ₪400</button><p>כסף: ₪'+P.money+'</p>';
+ else if(a=='c')h+='<h3>👥 אנשי קשר</h3><button onclick="cl(0)">אמא</button><button onclick="cl(1)">אבי המכונאי</button><button onclick="cl(2)">דני החבר</button><button onclick="cl(3)">מונית לנקודת ההתחלה ₪40</button>';
+ else h+='<h3>ℹ️ הדרכה</h3><p>🕹️ ג׳ויסטיק: תנועה. גרירה על המסך: מצלמה.</p><p>🟡 טבעת צהובה ליד חנות: כניסה (כפתור פעולה).</p><p>בפנים: 🟢 קנייה, 🔵 עבודה, 🔴 שוד (מיני־גיים פריצה), ⚪ יציאה.</p><p>🚗 כפתור פעולה ליד רכב: כניסה/יציאה.</p><p>🧗 החזיקו ״טיפוס״ מול בניין.</p><p>💃 ריקוד: לחיצה חוזרת מחליפה סגנון.</p><p>⌨️ מחשב: WASD, רווח, E, C, G, P</p>';
+ if(a!='h')h+='<button onclick="pg(\'h\')" style="background:#333a66">⬅ חזרה</button>';$('pc').innerHTML=h}
+function mis(k){if(P.int){msg('צאו מהחנות קודם');return}const rx=[-175,-105,-35,35,105,175];let x,z;if(Math.random()<.5){x=rx[Math.random()*6|0];z=R(-165,165)}else{z=rx[Math.random()*6|0];x=R(-165,165)}
+ mission={x,z,k,r:Math.round(100+Math.hypot(x-P.x,z-P.z)*1.3),n:k?'מונית':'משלוח'};phoneT();msg('יעד סומן במפה (נקודה צהובה) 📍')}
+function by(k){const p=[300,200,60,400][k];if(P.money<p){msg('אין מספיק כסף 💸');return}P.money-=p;if(k==0)P.vest=1;if(k==1)P.kit=1;if(k==2)P.hp=Math.min(100,P.hp+50);if(k==3)mkCar(0x00bcd4,P.x+4,P.z+4,0);msg('נקנה ✔');pg('s')}
+function cl(k){const t=['אמא: תיזהר בחוץ ותאכל משהו!','אבי: הרכב שלך תמיד מוכן, חביבי.','דני: שמעתי שבבנק יש כספת עמוסה 😏'];if(k<3)msg(t[k]);else if(P.money>=40&&!P.int){P.money-=40;P.x=0;P.z=32;msg('המונית הורידה אתכם בנקודת ההתחלה')}phoneT()}
+// ---------- loop
+const cN=new THREE.Color(0x060a1c),cD=new THREE.Color(0x7fc4ff),cT=new THREE.Color(0xff7a45);let acc=0,last=performance.now();
+function env(){if(P.int){sc.background.set(0x0a0a10);sc.fog.color.set(0x0a0a10);hemi.intensity=.9;sun.visible=false;return}sun.visible=true;
+ const a=(tday-6)/24*PI*2,s=Math.sin(a),d=clamp(s*1.3+.15,0,1),tw=clamp(1-Math.abs(s)*3,0,1);
+ sc.background.copy(cN).lerp(cD,d).lerp(cT,tw*.55);sc.fog.color.copy(sc.background);hemi.intensity=.25+d*.55;sun.intensity=d*1.1;
+ sun.position.set(P.x+Math.cos(a)*90,Math.max(s,.15)*90+10,P.z+40);sun.target.position.set(P.x,0,P.z);
+ const e=(1-d)*1.3;styles.forEach(m=>m.emissiveIntensity=e);lampM.emissiveIntensity=e*1.6}
+function loop(n){requestAnimationFrame(loop);const dt=Math.min(.05,(n-last)/1000);last=n;const t=n/1000;
+ if(started&&!hk.on&&$('ph').style.display!='flex'){tday=(tday+dt/25)%24;
+  let ix=J.x+(K.d?1:0)-(K.a?1:0),iy=J.y+(K.w?1:0)-(K.s?1:0);const l=Math.hypot(ix,iy);if(l>1){ix/=l;iy/=l}
+  if(P.car){const c=P.car;c.v+=iy*(iy>0?16:20)*dt;c.v*=1-(iy?.5:1.4)*dt;c.v=clamp(c.v,-8,34);c.h-=ix*1.9*dt*clamp(c.v/6,-1,1);
+   const nx=c.x+Math.sin(c.h)*c.v*dt,nz=c.z+Math.cos(c.h)*c.v*dt;if(hit(nx,nz,0,1.7))c.v*=-.35;else{c.x=clamp(nx,-185,185);c.z=clamp(nz,-185,185)}
+   c.m.position.set(c.x,0,c.z);c.m.rotation.y=c.h;P.x=c.x;P.z=c.z;P.y=0;if(!dr&&Math.abs(c.v)>3)yaw=lerpA(yaw,c.h+PI,dt*1.5);
+   for(const f of foes)if(!f.dead&&Math.abs(c.v)>8&&Math.hypot(f.x-c.x,f.z-c.z)<2.4){f.dead=1;f.rs=Date.now()+30000;f.g.visible=false;P.money+=60;msg('הדרסתם בריון! ‎+₪60')}}
+  else{const sy=Math.sin(yaw),cy=Math.cos(yaw),dx=-sy*iy+cy*ix,dz=-cy*iy-sy*ix,sp=P.int?4.5:(l>.9?7.5:5)*Math.min(1,l*1.2);
+   if(l>.1){P.dance=-1;const nx=P.x+dx*sp*dt,nz=P.z+dz*sp*dt;
+    if(P.int){P.x=clamp(nx,2991,3009);P.z=clamp(nz,-9,9)}else{if(!hit(nx,P.z,P.y))P.x=clamp(nx,-185,185);if(!hit(P.x,nz,P.y))P.z=clamp(nz,-185,185)}
+    P.rot=lerpA(P.rot,Math.atan2(dx,dz),Math.min(1,dt*12))}
+   const f=P.int?0:flr(P.x,P.z,P.y);P.climb=0;
+   if(CL&&!P.int&&hit(P.x,P.z,P.y,1.2)){P.climb=1;P.vy=4.4}else{if(JP&&P.y<=f+.02)P.vy=9;P.vy-=26*dt}
+   JP=0;P.y+=P.vy*dt;const f2=P.int?0:flr(P.x,P.z,P.y);if(P.y<=f2){P.y=f2;P.vy=0}
+   pl.g.position.set(P.x,P.y,P.z);pl.g.rotation.y=P.rot;
+   P.pt-=dt;anim(pl,P.pt>0?5:P.climb?2:P.dance>=0?10+P.dance:l>.1?1:0,t,Math.min(1,l*1.2))}
+  if(!P.int)for(const f of foes){if(f.dead){if(Date.now()>f.rs){f.dead=0;f.hp=3;f.g.visible=true}continue}
+   const d=Math.hypot(P.x-f.x,P.z-f.z);let mv=0;if(d<28){const a=Math.atan2(P.x-f.x,P.z-f.z);f.rot=lerpA(f.rot,a,.2);if(d>1.4){const nx=f.x+Math.sin(a)*3.6*dt,nz=f.z+Math.cos(a)*3.6*dt;if(!hit(nx,nz,0))f.x=nx,f.z=nz;mv=1}else if(!P.car&&P.y<2)P.hp-=(P.vest?4:9)*dt}
+   f.g.position.set(f.x,0,f.z);f.g.rotation.y=f.rot;anim(f,mv,t,1)}
+  if(P.hp<=0){P.hp=100;P.money=Math.max(0,P.money-100);if(P.car){P.car=null;pl.g.visible=true}if(P.int){P.int=null;city.visible=true;IG.visible=false}P.x=0;P.z=32;P.y=0;msg('התעלפתם... התעוררתם בבית חולים (-₪100) 🏥')}
+  if(mission&&!P.int&&Math.hypot(P.x-mission.x,P.z-mission.z)<5&&(!mission.k||P.car)){P.money+=mission.r;msg('המשימה הושלמה! ‎+₪'+mission.r+' 🎉');mission=null}
+  if(hk.on===0&&false){}}
+ if(hk.on){hk.p+=hk.d*(1.1+hk.r*.5)*dt;if(hk.p>1){hk.p=1;hk.d=-1}if(hk.p<0){hk.p=0;hk.d=1}$('mk').style.left=hk.p*97+'%'}
+ env();
+ // camera
+ const dist=P.int?5:P.car?11:7,tgt=new THREE.Vector3(P.x,P.y+(P.car?1.6:1.5),P.z);let dd=dist;const cp=new THREE.Vector3();
+ for(let k=0;k<8;k++){cp.set(tgt.x+Math.sin(yaw)*Math.cos(pitch)*dd,tgt.y+Math.sin(pitch)*dd+.5,tgt.z+Math.cos(yaw)*Math.cos(pitch)*dd);
+  if(P.int){cp.x=clamp(cp.x,2990.6,3009.4);cp.z=clamp(cp.z,-9.4,9.4);cp.y=Math.min(cp.y,5.5);break}
+  if(!hit(cp.x,cp.z,cp.y-.3,.4))break;dd*=.8}
+ cam.position.copy(cp);cam.lookAt(tgt);
+ acc+=dt;if(acc>.15){acc=0;hud()}drawMap();rd.render(sc,cam)}
+function hud(){const hh=Math.floor(tday),mm=Math.floor((tday%1)*60);
+ $('top').innerHTML='💰 ₪'+P.money+(P.vest?' 🦺':'')+(P.kit?' 🔧':'')+'<div id="hpb"><div id="hp" style="width:'+clamp(P.hp,0,100)+'%"></div></div>🕒 '+String(hh).padStart(2,'0')+':'+String(mm).padStart(2,'0')+(mission?'<br>📍 '+mission.n+' ‎₪'+mission.r+' · '+Math.round(Math.hypot(P.x-mission.x,P.z-mission.z))+'מ׳':'')+(P.dance>=0?'<br>💃 '+DN[P.dance]:'');
+ let p='',b='אגרוף';if(P.int){const o=nearI();if(o){p=o.l;b=o.k=='exit'?'יציאה':o.k=='buy'?'קנייה':o.k=='work'?'עבודה':'שוד'}}
+ else if(P.car){p='לחצו לירידה מהרכב';b='ירידה'}else{const c=nearCar(),d=doors.find(q=>Math.hypot(q.x-P.x,q.z-P.z)<3.6);if(d){p='כניסה ל'+S[d.t].n;b='כניסה'}else if(c){p='כניסה לרכב';b='רכב'}}
+ const e=$('pr');e.style.display=p?'block':'none';e.textContent=p;$('bA').textContent=b}
+const mc=$('mini'),mx=mc.getContext('2d');mc.width=mc.height=240;
+function drawMap(){mx.clearRect(0,0,240,240);mx.save();mx.beginPath();mx.arc(120,120,118,0,7);mx.clip();mx.fillStyle='#1a1f2b';mx.fillRect(0,0,240,240);
+ mx.translate(120,120);mx.rotate(yaw);const k=P.int?7:2;mx.scale(k,k);mx.translate(-P.x,-P.z);
+ if(P.int){mx.fillStyle='#333a48';mx.fillRect(2990,-10,20,20);const cs=['#f33','#39f','#3d6','#fff'];II.forEach(o=>{mx.fillStyle=o.k=='rob'?'#f33':o.k=='work'?'#39f':o.k=='buy'?'#3d6':'#fff';mx.beginPath();mx.arc(o.x,o.z,.9,0,7);mx.fill()})}
+ else{mx.fillStyle='#3b4252';for(let i=-2;i<3;i++)for(let j=-2;j<3;j++)mx.fillRect(i*70-28,j*70-28,56,56);mx.fillStyle='#6a748a';for(const b of B)mx.fillRect(b.x0,b.z0,b.x1-b.x0,b.z1-b.z0);
+  doors.forEach(d=>{mx.fillStyle='#ffd84d';mx.beginPath();mx.arc(d.x,d.z,3.5,0,7);mx.fill()});mx.fillStyle='#4af';cars.forEach(c=>mx.fillRect(c.x-1.2,c.z-1.2,2.4,2.4));
+  mx.fillStyle='#f22';foes.forEach(f=>{if(!f.dead){mx.beginPath();mx.arc(f.x,f.z,1.8,0,7);mx.fill()}});
+  if(mission){let dx=mission.x-P.x,dz=mission.z-P.z;const d=Math.hypot(dx,dz);if(d>52){dx*=52/d;dz*=52/d}mx.fillStyle='#ff0';mx.beginPath();mx.arc(P.x+dx,P.z+dz,4,0,7);mx.fill();mx.strokeStyle='#000';mx.stroke()}}
+ mx.restore();mx.fillStyle='#fff';mx.strokeStyle='#000';mx.lineWidth=2;mx.beginPath();mx.moveTo(120,106);mx.lineTo(129,130);mx.lineTo(120,125);mx.lineTo(111,130);mx.closePath();mx.fill();mx.stroke()}
+requestAnimationFrame(loop);
+</script></body></html>
